@@ -230,9 +230,31 @@ section {
   margin-bottom: 1rem;
 }
 
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
 .title {
   font-size: 3rem;
   text-align: center;
+  overflow: hidden; /* Ensures the content is hidden until it's revealed */
+  border-right: .15em solid white; /* Creates the blinking cursor */
+  white-space: nowrap; 
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 #socials-container {
